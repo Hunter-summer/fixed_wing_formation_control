@@ -1,0 +1,9 @@
+一个发同时全部收：
+仿真环境下：test_comunication.sh
+vir_dir_leader中向所有无人机发布/uav0/fixed_wing/leaderstates 中俯仰角指令-1 -> 1
+所有无人机的task_main()中test接收这个指令，并以舵面的形式发布出去，观察/uav0/fixed_wing/leaderstates/pitch_angle 与 uavx/fixed_wing/fw_cmd/pitch_angle 这两个量
+实际中：地面站运行test_comunication2_1.sh
+rk33991 运行uav1.launch，记得改mavros_url为电脑ip才能地面站收到
+rk33992 运行uav2.launch，记得改mavros_url为电脑ip才能地面站收到
+rk33993 运行uav3.launch，记得改mavros_url为电脑ip才能地面站收到
+rk33993 运行uav4.launch，记得改mavros_url为电脑ip才能地面站收到

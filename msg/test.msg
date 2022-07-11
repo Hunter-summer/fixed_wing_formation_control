@@ -1,0 +1,2 @@
+bool Gnd_vaild
+float64 Gnd_switch_mode

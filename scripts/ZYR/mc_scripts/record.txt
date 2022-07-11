@@ -1,0 +1,11 @@
+1、修改.sh文件，主要是模型以及是否显示gazebo的gui界面。
+
+2、测试：ros端直接发送期望的位置，看px4能否收到
+
+
+消息流：
+发布端：先定义自己的ROS消息Msg，然后进行在Task_main里面进行订阅，发布出去，此时是ROS的消息，然后在pack_fw_states中将ROS_msgs转化为MAVROS消息, 在fixed_wing_sub_pub中定义需要订阅的量，然后在pack中将这些量转化为MAVROS格式。然后发送给px4PM07  V2.2
+
+
+
+OFFBOARD需要先好好起飞，然后执行外部位置或者外部姿态就可以啦。这样子才能实现OFFBOARD，如何实现很好的起飞？  OFFBOARD外部姿态可以直接起飞。但是

@@ -1,0 +1,20 @@
+<launch>
+ <group ns="uav3">
+ 		<!-- 启动MAVROS -->
+			<node pkg="mavros" type="mavros_node" name="mavros" output="screen">
+			<param name="fcu_url" value="/dev/ttyACM0:57600" />
+			<param name="gcs_url" value="udp://@192.168.199.134" />
+			<param name="target_system_id" value="1"/>
+			<param name="target_component_id" value="1" />
+			<rosparam command="load" file="$(find mavros)/launch/px4_pluginlists.yaml"  />
+			<rosparam command="load" file="$(find mavros)/launch/px4_config.yaml" />
+		</node>
+ </group>
+</launch>
+
+	<!-- run the swarm_estimator.cpp -->
+<node pkg="fixed_wing_formation_control" type="pack_fw3_states" name="pack_fw3_states" output="screen">
+</node>
+<node pkg="fixed_wing_formation_control" type="follower3_main" name="follower3_main" output="screen">
+</node>
+</launch>

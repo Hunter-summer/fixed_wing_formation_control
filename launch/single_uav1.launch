@@ -1,0 +1,8 @@
+<launch>
+<include file="$(find px4)/launch/single_uav_mavros_sitl_sdf.launch">
+        </include>
+<node pkg="fixed_wing_formation_control" type="pack_fw1_states" name="pack_fw1_states">
+</node>
+<node pkg="fixed_wing_formation_control" type="follower1_main" name="follower1_main" >
+</node>
+</launch>
